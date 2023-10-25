@@ -19,3 +19,7 @@ for (i = 1; i <=10; i++)
 return 0;
 
 }
+
+// pegue todos os 10 primeiros múltiplos do número da entrada, sem usar condicional(if)
+// um número N, inteiro maior que 0
+// todos os 10 primeiro múltiplos de N
