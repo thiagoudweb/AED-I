@@ -14,7 +14,11 @@ int main()
 {
     int x = 0, y = 1;
     int escolha, senhaverif;
+    char teste[50];
     Cliente cad[100];
+
+    // Alterar para switch case //
+
     while (x < 100)
     {
         printf("Escolha uma opção\n");
@@ -22,23 +26,27 @@ int main()
         printf("[2]: SAIR\n");
         scanf("%d", &escolha);
 
+        // Trocar ordem do break//
+
         if (escolha == 2)
         {
             break;
         }
         else
-        {    
+        {
+      while ((getchar()) != '\n'); 
+
             printf("Cliente:\n");
-            scanf("%s", cad[x].cliente);
-            fflush(stdin);        
+            fgets(cad[x].cliente,50,stdin);
+            cad[x].cliente[strcspn(cad[x].cliente, "\n")] = 0; 
             printf("Senha:\n");
             scanf("%d", &cad[x].senhaAcesso);
-            printf("Situacao:\n");
-            gets(cad[x].situacao);           
+            printf("Situacao:\n");         
+            getchar();            
+            scanf("%[A-Z a-z]", &cad[x].situacao); 
             x++;
-        }
     }
-
+    }
     while (y == 1)
     {
         printf("Digite a senha de acesso:\n");
