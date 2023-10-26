@@ -3,33 +3,33 @@
 #include <ctype.h>
 #include <string.h>
 
-int main() {
-  
-  int port, mat, contador= 0;
-  float red;
+int main()
+{
 
-  while (1) {
-   
-    scanf("%d", &port);
-    scanf("%d", &mat);
-    scanf("%f", &red);
+    int port, mat, contador = 0;
+    float red;
 
-    if (port < 0)
+    while (1)
     {
-        break;
-    }
-    else
-    {
-        if (port >= 40 && mat >= 21 && red >= 7)
+
+        scanf("%d", &port);
+        scanf("%d", &mat);
+        scanf("%f", &red);
+
+        if (port < 0)
         {
-            contador++;
+            break;
         }
-        
+        else
+        {
+            if (port >= 40 && mat >= 21 && red >= 7)
+            {
+                contador++;
+            }
+        }
     }
-    
-  }
 
-  printf("%d\n", contador);
+    printf("%d\n", contador);
 
-  return 0;
+    return 0;
 }
