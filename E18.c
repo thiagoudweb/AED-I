@@ -29,7 +29,7 @@ int main()
         else
         {    
             printf("Cliente:\n");
-            scanf("%50[^\n]s", cad[x].cliente);
+            scanf("%s", cad[x].cliente);
             fflush(stdin);        
             printf("Senha:\n");
             scanf("%d", &cad[x].senhaAcesso);
