@@ -34,18 +34,19 @@ int main()
         }
         else
         {
-      while ((getchar()) != '\n'); 
+            while ((getchar()) != '\n')
+                ;
 
             printf("Cliente:\n");
-            fgets(cad[x].cliente,50,stdin);
-            cad[x].cliente[strcspn(cad[x].cliente, "\n")] = 0; 
+            fgets(cad[x].cliente, 50, stdin);
+            cad[x].cliente[strcspn(cad[x].cliente, "\n")] = 0;
             printf("Senha:\n");
             scanf("%d", &cad[x].senhaAcesso);
-            printf("Situacao:\n");         
-            getchar();            
-            scanf("%[A-Z a-z]", &cad[x].situacao); 
+            printf("Situacao:\n");
+            getchar();
+            scanf("%[A-Z a-z]", &cad[x].situacao);
             x++;
-    }
+        }
     }
     while (y == 1)
     {
