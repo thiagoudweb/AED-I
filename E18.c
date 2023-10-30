@@ -28,7 +28,6 @@ int main()
     cliente cad_cliente[100];
     for (i = 0; i < 100; i++)
     {
-        printf("DIGITE AS INFORMAÇÕES AQUI PARA CADASTRO\n");
         fgets(cad_cliente[i].cliente, sizeof(cad_cliente[i].cliente), stdin);
         formatando_string(cad_cliente + i);
         // verificando saida do usuario
@@ -46,7 +45,6 @@ int main()
     {
         i = 0;
         bool_senha = 0;
-        printf("DIGITE UMA SENHA PARA VERIFIAÇÃO\n");
         scanf("%d", &senha_veri);
 
         if (senha_veri == -1)
@@ -60,18 +58,18 @@ int main()
             {
                 if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao == 'P')
                 {
-                    printf("%s, Seja bem vindo(a)", cad_cliente[i].cliente);
+                    printf("%s, Seja bem vindo(a)\n", cad_cliente[i].cliente);
                     bool_senha = 1;
                 }
                 else if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao != 'P')
                 {
-                    printf("Não está esquecendo de algo, %s ? Procure a recepção!", cad_cliente[i].cliente);
+                    printf("Não está esquecendo de algo, %s ? Procure a recepção!\n", cad_cliente[i].cliente);
                     bool_senha = 1;
                 }
 
                 else if (bool_senha == 0)
                 {
-                    printf("Seja bem-vindo(a)! Procure a recepção!");
+                    printf("Seja bem-vindo(a)! Procure a recepção!\n");
                 }
             }
         }
