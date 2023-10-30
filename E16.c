@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <locale.h>
 
 // struct para guardar os livros
 typedef struct prat_livros
@@ -32,12 +33,13 @@ void remover_final_usuario(char *usuario_livro)
 
 int main()
 {
+    setlocale(LC_ALL, "Portuguese");
     int n, i, bool_comp;
     scanf("%d", &n);
     getchar();
     char nome_usuario[100];
     array_livros *guard_livros = malloc(n * sizeof(array_livros));
-    
+
     for (i = 0; i < n; i++)
     {
         fgets(guard_livros[i].lib_livros, sizeof(guard_livros[i].lib_livros), stdin);
@@ -62,15 +64,9 @@ int main()
     {
         printf("Sim");
     }
-    else{
+    else
+    {
 
-        printf("Nao");
+        printf("Não");
     }
-
-
-
-
-
-
-
 }
