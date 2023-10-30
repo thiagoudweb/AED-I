@@ -43,7 +43,7 @@ int main()
     for (i = 0; i < n; i++)
     {
         fgets(guard_livros[i].lib_livros, sizeof(guard_livros[i].lib_livros), stdin);
-        remover_final(guard_livros[i].lib_livros);
+        remover_final(&guard_livros[i]);
     }
 
     fgets(nome_usuario, 100, stdin);
@@ -66,7 +66,6 @@ int main()
     }
     else
     {
-
         printf("Não");
     }
 }
