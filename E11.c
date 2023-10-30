@@ -3,7 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
-void maior_par(int *lista, int tam)
+int maior_par(int *lista, int tam)
 {
     int guard, i = 0;
     for (i = 0; i < tam; i++)
@@ -23,14 +23,16 @@ void maior_par(int *lista, int tam)
         }
     }
 
-    printf("%d", guard);
+    return guard;
 }
 
 int main()
 {
     int list[] = {34, 30, 9, 35, 15, 6, -5, 32, -1, 0, 10, 18, 38, 15, 42};
+    int result;
     int tam = sizeof(list) / sizeof(int);
-    maior_par(list, tam);
+    result = maior_par(list, tam);
+    printf("%d", result);
 
     return 0;
 }
