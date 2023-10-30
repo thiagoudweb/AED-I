@@ -77,7 +77,7 @@ int main()
                 }
                 else if (cad_cliente[i].situacao != 'P')
                 {
-                    printf("Não está esquecendo de algo, %s? Procure a recepção!\n");
+                    printf("Não está esquecendo de algo, %s? Procure a recepção!\n", cad_cliente[i].cliente);
                 }
             }
         }
