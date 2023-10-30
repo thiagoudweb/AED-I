@@ -24,13 +24,55 @@ void formatando_string(cliente *nome_cliente)
 int main()
 {
     setlocale(LC_ALL, "Portuguese");
-
-    int i;
+    int i, senha_cad, status, senha_veri, bool_senha;
+    cliente cad_cliente[100];
     for (i = 0; i < 100; i++)
     {
-        cliente *cad_cliente = malloc(i * sizeof(cliente));
+        printf("DIGITE AS INFORMAÇÕES AQUI PARA CADASTRO\n");
         fgets(cad_cliente[i].cliente, sizeof(cad_cliente[i].cliente), stdin);
         formatando_string(cad_cliente + i);
+        // verificando saida do usuario
+        if (strcasecmp(cad_cliente[i].cliente, "SAIR") == 0)
+        {
+            break;
+        }
+        scanf("%d", &cad_cliente[i].senhaAcesso);
+        scanf("%s", &cad_cliente[i].situacao);
+    }
+
+    while (1)
+    {
+        i = 0;
+        bool_senha = 0;
+        printf("DIGITE UMA SENHA PARA VERIFIAÇÃO\n");
+        scanf("%d", &senha_veri);
+
+        if (senha_veri == -1)
+        {
+            break;
+        }
+        else
+        {
+
+            for (i = 0; i < 100; i++)
+            {
+                if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao == 'P')
+                {
+                    printf("%s, Seja bem vindo(a)", cad_cliente[i].cliente);
+                    bool_senha = 1;
+                }
+                else if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao != 'P')
+                {
+                    printf("Não está esquecendo de algo, %s ? Procure a recepção!", cad_cliente[i].cliente);
+                    bool_senha = 1;
+                }
+
+                else if (bool_senha == 0)
+                {
+                    printf("Seja bem-vindo(a)! Procure a recepção!");
+                }
+            }
+        }
     }
 
     return 0;
