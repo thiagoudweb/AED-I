@@ -36,7 +36,6 @@ int main()
         {
             while ((getchar()) != '\n')
                 ;
-
             printf("Cliente:\n");
             fgets(cad[x].cliente, 50, stdin);
             cad[x].cliente[strcspn(cad[x].cliente, "\n")] = 0;

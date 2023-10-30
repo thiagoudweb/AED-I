@@ -37,7 +37,7 @@ int main()
     getchar();
     char nome_usuario[100];
     array_livros *guard_livros = malloc(n * sizeof(array_livros));
-
+    
     for (i = 0; i < n; i++)
     {
         fgets(guard_livros[i].lib_livros, sizeof(guard_livros[i].lib_livros), stdin);
@@ -62,9 +62,15 @@ int main()
     {
         printf("Sim");
     }
-    else
-    {
+    else{
 
         printf("Nao");
     }
+
+
+
+
+
+
+
 }
