@@ -37,7 +37,9 @@ int main()
             break;
         }
         scanf("%d", &cad_cliente[i].senhaAcesso);
+        getchar();
         scanf("%s", &cad_cliente[i].situacao);
+        getchar();
     }
 
     while (1)
