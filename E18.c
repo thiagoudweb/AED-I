@@ -56,20 +56,28 @@ int main()
 
             for (i = 0; i < 100; i++)
             {
-                if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao == 'P')
+                if (senha_veri == cad_cliente[i].senhaAcesso)
                 {
-                    printf("%s, Seja bem vindo(a)\n", cad_cliente[i].cliente);
                     bool_senha = 1;
+                    break;
                 }
-                else if (senha_veri == cad_cliente[i].senhaAcesso && cad_cliente->situacao != 'P')
-                {
-                    printf("Não está esquecendo de algo, %s ? Procure a recepção!\n", cad_cliente[i].cliente);
-                    bool_senha = 1;
-                }
+            }
 
-                else if (bool_senha == 0)
+            if (bool_senha != 1)
+            {
+                printf("Seja bem-vindo(a)! Procure a recepção!");
+                break;
+            }
+            else
+            {
+
+                if (cad_cliente[i].situacao == 'P')
                 {
-                    printf("Seja bem-vindo(a)! Procure a recepção!\n");
+                    printf("%s, seja bem-vindo(a)!", cad_cliente[i].cliente);
+                }
+                else if (cad_cliente[i].situacao != 'P')
+                {
+                    printf("Não está esquecendo de algo, %s? Procure a recepção!");
                 }
             }
         }
