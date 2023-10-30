@@ -65,7 +65,7 @@ int main()
 
             if (bool_senha != 1)
             {
-                printf("Seja bem-vindo(a)! Procure a recepção!");
+                printf("Seja bem-vindo(a)! Procure a recepção!\n");
                 break;
             }
             else
@@ -73,11 +73,11 @@ int main()
 
                 if (cad_cliente[i].situacao == 'P')
                 {
-                    printf("%s, seja bem-vindo(a)!", cad_cliente[i].cliente);
+                    printf("%s, seja bem-vindo(a)!\n", cad_cliente[i].cliente);
                 }
                 else if (cad_cliente[i].situacao != 'P')
                 {
-                    printf("Não está esquecendo de algo, %s? Procure a recepção!");
+                    printf("Não está esquecendo de algo, %s? Procure a recepção!\n");
                 }
             }
         }
