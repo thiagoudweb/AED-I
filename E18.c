@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include <ctype.h>
 #include <string.h>
 #include <locale.h>
@@ -12,31 +11,27 @@ typedef struct cadastroCliente
 } cliente;
 
 // Removendo '\n' da string //
-void formtando_string (){
-
-
-
+void formatando_string(cliente *nome_cliente)
+{
+    int len;
+    len = strlen(nome_cliente->cliente);
+    if (len > 0 && nome_cliente->cliente[len - 1] == '\n')
+    {
+        nome_cliente->cliente[len - 1] = '\0';
+    }
 }
-
 
 int main()
 {
-    // setlocale(LC_ALL, "Portuguese");
-    
-    // int i;
-    
-    // cliente *cad_cliente = malloc(i + sizeof(cliente));
-    // for (i = 0; i <100; i++)
-    // {
-    //     /* code */
-    // }
+    setlocale(LC_ALL, "Portuguese");
+
     int i;
-
-    i = sizeof(cliente);
-    printf("%d", i);
-    
-
-
+    for (i = 0; i < 100; i++)
+    {
+        cliente *cad_cliente = malloc(i * sizeof(cliente));
+        fgets(cad_cliente[i].cliente, sizeof(cad_cliente[i].cliente), stdin);
+        formatando_string(cad_cliente + i);
+    }
 
     return 0;
 }
