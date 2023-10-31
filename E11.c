@@ -19,23 +19,23 @@ int maior_par(int *lista, int tam)
 
 int main()
 {
-    int list[15], i;
-    for (i = 0; i < 15; i++)
-    {
-        scanf("%d", &list[i]);
-    }
+    char list[100];
+    int list_num[100], i,tam;
+    char *token;
+    int menor;
+    fgets(list, 100, stdin);
+    fflush(stdin);
 
-    int tam = sizeof(list) / sizeof(int);
-    int result = maior_par(list, tam);
+    token = strtok(list, ",");
+    while (token != NULL)
+    {
+        list_num[i++] = atoi(token);
+        token = strtok(NULL, ",");
+    }
+    tam = sizeof(list_num)/sizeof(int);
+    menor = maior_par(list_num, tam);
 
-    if (result != -1)
-    {
-        printf("%d", result);
-    }
-    else
-    {
-        return 0;
-    }
+    printf("¨%d", menor);
 
     return 0;
 }
