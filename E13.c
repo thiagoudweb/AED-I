@@ -15,8 +15,7 @@ int main()
     {
         scanf("%d", &vetor_geral[i]);
     }
-
-    // processando números
+    // impar
     for (i = 0; i < 15; i++)
     {
         if (vetor_geral[i] % 2 != 0)
@@ -32,6 +31,7 @@ int main()
                 cont_impar = 0;
             }
         }
+        // par
         else
         {
             vetor_par[cont_par] = vetor_geral[i];
@@ -46,8 +46,7 @@ int main()
             }
         }
     }
-
-    // Imprimir os elementos restantes nos vetores impar e par
+    // vetor rsto
     for (int y = 0; y < cont_impar; y++)
     {
         printf("impar[%d] = %d\n", y, vetor_impar[y]);

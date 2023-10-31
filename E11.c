@@ -5,19 +5,10 @@
 
 int maior_par(int *lista, int tam)
 {
-    int guard, i = 0;
-    for (i = 0; i < tam; i++)
+    int guard = -1;
+    for (int i = 0; i < tam; i++)
     {
-        if (lista[i] % 2 == 0)
-        {
-            guard = lista[i];
-            break;
-        }
-    }
-
-    for (i = 0; i < tam; i++)
-    {
-        if (lista[i] % 2 == 0 && lista[i] > guard)
+        if (lista[i] % 2 == 0 && (guard == -1 || lista[i] > guard))
         {
             guard = lista[i];
         }
@@ -28,11 +19,23 @@ int maior_par(int *lista, int tam)
 
 int main()
 {
-    int list[] = {34, 30, 9, 35, 15, 6, -5, 32, -1, 0, 10, 18, 38, 15, 42};
-    int result;
+    int list[15], i;
+    for (i = 0; i < 15; i++)
+    {
+        scanf("%d", &list[i]);
+    }
+
     int tam = sizeof(list) / sizeof(int);
-    result = maior_par(list, tam);
-    printf("%d", result);
+    int result = maior_par(list, tam);
+
+    if (result != -1)
+    {
+        printf("%d", result);
+    }
+    else
+    {
+        return 0;
+    }
 
     return 0;
 }
