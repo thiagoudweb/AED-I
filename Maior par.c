@@ -24,7 +24,6 @@ int main()
     char *token;
     int menor;
     fgets(list, 100, stdin);
-    fflush(stdin);
 
     token = strtok(list, ",");
     while (token != NULL)
