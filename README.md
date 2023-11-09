@@ -13,3 +13,4 @@
  Alocação dinâmica,
  pilhas,
  Função recursiva
+ Ponteiros
